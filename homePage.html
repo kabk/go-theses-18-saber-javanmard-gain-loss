@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-
 <link href="https://fonts.googleapis.com/css?family=Changa:200,400,800" rel="stylesheet">
+
+
 
 <head>
 <style>
@@ -10,23 +11,21 @@ div {
     margin: auto;
 /*     border: 1px solid gray; */
     padding: 8px;
-    background-color: black;
+    background-color: white;
 }
 h1 {
-/*     text-align: center; */
-    text-transform: uppercase;
-    color: white;
     text-align: center;
+    text-transform: uppercase;
+    color: black;
     font-size: 10vw;
-    font-family: 'Times', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 p {
-	position: relative;
-
-	text-align: center;
-
-    color: white;
-    font-family: 'Times', sans-serif;
+    text-indent: 30px;
+    text-align: left;
+    letter-spacing: 1px;
+    color: blue;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 a {
@@ -43,111 +42,63 @@ a {
 }
 
 
-body {
-background-color: black;
-}
-
-
-
-
-#spin1 {
-/* 	position: fixed; */
-	top:0vw;
-	text-align: center;
-/* 	word-spacing: 2px; */
+a {
 	color:white;
-	text-align: center;
-	font-weight: 200;
-	font-size: 20vw;
-	font-family: 'Changa', sans-serif;
-}
+	}
 
-#spin1:after {
-  content:"";
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { content:"GAIN"; }
-  50% { content:"LOSS"; }
-  100% { content:"GAIN"; }
-}
-
-
-h1 {
+#abstract {
 	position: relative;
-	top:-25vw;
-/* 	left: 5vw; */
-  color:darkGray;
-  font-weight: 400;
-  font-size: 13vw;
-  font-family: 'Changa', sans-serif;
+	top: -6.5vw;
+	background-color: black;
+	color: white;
 }
 
-/* 
-#spin2:after {
-  content:"";
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  5% { content:"CAN BE"; }
-  25% { content:"SHOULD BE"; }
-  35% { content:"MIGHT BE"; }
-  45% { content:"MUST BE"; }
-  55% { content:"CAN BE"; }
-}
- */
-
-
-
-#spin3 {
+#introduction {
 	position: relative;
-	top:-50vw;
-/* 	text-align: center; */
-  color:white;
-  font-weight: 800;
-  font-size: 20vw;
-  font-family: 'Changa', sans-serif;
+	top: -13vw;
+	background-color: white;
+	color: balck;
 }
 
-#spin3:after {
-  content:"";
-  animation: spin 1s linear infinite;
+#thought1 {
+	position: relative;
+	top: -20vw;
+	background-color: black;
+	color: white;
 }
 
-@keyframes spin {
-  100% { content:"LOSS"; }
-  50% { content:"GAIN"; }
-  0% { content:"LOSS"; }
-  
+#thought2 {
+	position: relative;
+	top: -27vw;
+	background-color: white;
+	color: balck;
 }
+
+#conclusion {
+	position: relative;
+	top: -35vw;
+	background-color: black;
+	color: white;
+}
+
 
 </style>
-
-<!-- ......................................................................................... -->
-
 </head>
 
 
 <body>
 
+<div>
+<!-- <h1> GAIN CAN BE LOSS <br> LOSS CAN BE GAIN </h1> -->
 
-<p><a href="index.html"> </a><span id="spin1"></span></p>
-<h1><a href="index.html"> CAN BE </a><span id="text"></span></h1>
-<p><a href="index.html"></a><span id="spin3"></span></p>
-
-
-
-
-
-
+<h1 id="abstract" > <a href="homePage.html">ABSTRACT </a>  </h1>
+<h1 id="introduction"> INTRODUCTION </h1>
+<h1 id="thought1"> THOUGHT 1 </h1>
+<h1 id="thought2" > THOUGHT 2 </h1>
+<h1 id="conclusion"> CONCLUSION </h1>
 
 
 <!-- 
-<div>
-<h1> GAIN CAN BE LOSS <br> LOSS CAN BE GAIN </h1>
-
 <p> In my thesis I will do research about the rela- tionship between text and typography. Text in the traditional definition of graphic design is seen as an ingredient that the designer needs to deal with in a visual way. But what if the starting point is text and the meaning of text? Does it change the way a designer or a typographer works?
 Text is an important part in my work; my focus is on poetry, typography, and type design. It all deals with language and text.
 I'm from a country –Iran– in which literature and poetry is an important part of people’s life and there- fore many artists and designers use it as a powerful tool. I'll explore my own cultural background within western graphic design, particularly typography and push myself to develop a clear profile.
@@ -159,9 +110,9 @@ As a conclusion, I hope I will find out clear or at least some practical solutio
 - How can they direct and influence each other?
 - Where is the border between graphic design and fine arts, if language becomes an autonomous design tool?
 <a target="_blank" href="tryit.asp?filename=trycss_text">[LINK]</a>  </p>
+ -->
 
 </div>
- -->
 
 </body>
 </html>
