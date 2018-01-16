@@ -1,131 +1,115 @@
 <!DOCTYPE html>
-<html>
-
-
-<link href="https://fonts.googleapis.com/css?family=Changa:200,400,800" rel="stylesheet">
+<html lang="en" class="no-js">
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	
+	<link rel="stylesheet" type="text/css" href="/styles/fonts/fonts.css" />
+	
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script> <!-- Resource jQuery -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	
+	
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- **************************************** NEW STYLE **************************************** -->
+<!-- ******************************************************************************************* -->
+
+
+  	
+<title> THESIS-Intro </title>
+
+
+
+</head>
 <style>
-div {
-    margin: auto;
-/*     border: 1px solid gray; */
-    padding: 8px;
-    background-color: black;
+
+
+
+
+
+
+
+rect {
+position: fixed;
+z-index: 2;
 }
-h1 {
-/*     text-align: center; */
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-    font-size: 10vw;
-    font-family: 'Times', sans-serif;
+
+
+
+.fullscreen-bg {
+    position: fixed;
+    background-color: #eeeadd;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+/*     overflow: hidden; */
+    z-index: -1;
 }
-p {
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+
+
+.windowRect {
 	position: relative;
-
-	text-align: center;
-
-    color: white;
-    font-family: 'Times', sans-serif;
-    font-weight: bold;
-}
-a {
-    text-decoration: none;
-    color: red;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(roboto.woff2) format('woff2');
+    width: 19px;
+    height: 19px;
+    top:332px;
+    left:511px;
+    background-color: #887844;
+/* 	color: red; */
+    transition: width 0.2s ease , height 0.2s ease, transform 0.2s ease, background-color 1s ease;
+    z-index: 3;
+    animation: flicker 0.5s linear infinite;
+    
 }
 
-
-body {
-background-color: black;
+.windowRect:active {
+	background-color: #eeeadd;	
+    width: 1280px;
+    height: 800px;
+    transform: scale(2,2);
+    transform-origin: 100% 100%;
+/*     top:0px; */
+    z-index: 4;
+    animation:none;
 }
 
+@keyframes flicker {
 
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		opacity: .99;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.1;
+		
+/* 		color:red; */
 
-
-#spin1 {
-/* 	position: fixed; */
-	top:0vw;
-	text-align: center;
-/* 	word-spacing: 2px; */
-	color:white;
-	text-align: center;
-	font-weight: 200;
-	font-size: 20vw;
-	font-family: 'Changa', sans-serif;
-}
-
-#spin1:after {
-  content:"";
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { content:"GAIN"; }
-  50% { content:"LOSS"; }
-  100% { content:"GAIN"; }
-}
-
-
-h1 {
-	position: relative;
-	top:-25vw;
-/* 	left: 5vw; */
-  color:darkGray;
-  font-weight: 400;
-  font-size: 13vw;
-  font-family: 'Changa', sans-serif;
-}
-
-/* 
-#spin2:after {
-  content:"";
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  5% { content:"CAN BE"; }
-  25% { content:"SHOULD BE"; }
-  35% { content:"MIGHT BE"; }
-  45% { content:"MUST BE"; }
-  55% { content:"CAN BE"; }
-}
- */
-
-
-
-#spin3 {
-	position: relative;
-	top:-50vw;
-/* 	text-align: center; */
-  color:white;
-  font-weight: 800;
-  font-size: 20vw;
-  font-family: 'Changa', sans-serif;
-}
-
-#spin3:after {
-  content:"";
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% { content:"LOSS"; }
-  50% { content:"GAIN"; }
-  0% { content:"LOSS"; }
-  
+	}
 }
 
 </style>
-
-<!-- ......................................................................................... -->
 
 </head>
 
@@ -133,35 +117,33 @@ h1 {
 <body>
 
 
-<p><a href="homePage.html"> </a><span id="spin1"></span></p>
-<h1><a href="homePage.html"> CAN BE </a><span id="text"></span></h1>
-<p><a href="homePage.html"></a><span id="spin3"></span></p>
+
+
+<!-- <a href="chapters-no3.html"><img class="introVideo" auto src="files/GIF-new3.gif"></a> -->
 
 
 
 
+<div class="fullscreen-bg">
+    <video width="1200" loop autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <source src="files/IntroVideo-Version1.mp4" type="video/mp4">
+        <source src="files/IntroVideo-Version1.mp4" type="video/ogg">
+    </video>
+</div>
 
 
 
 
 <!-- 
-<div>
-<h1> GAIN CAN BE LOSS <br> LOSS CAN BE GAIN </h1>
-
-<p> In my thesis I will do research about the rela- tionship between text and typography. Text in the traditional definition of graphic design is seen as an ingredient that the designer needs to deal with in a visual way. But what if the starting point is text and the meaning of text? Does it change the way a designer or a typographer works?
-Text is an important part in my work; my focus is on poetry, typography, and type design. It all deals with language and text.
-I'm from a country –Iran– in which literature and poetry is an important part of people’s life and there- fore many artists and designers use it as a powerful tool. I'll explore my own cultural background within western graphic design, particularly typography and push myself to develop a clear profile.
-I hope the outcome of this thesis will help me to de- velop a system or structure that will direct and man- age my design process, using the power of text. Text and meaning of the words as a starting point, experi- menting with words and text relating to the content.
-In order to achive clear and practical results, my focus will be based on theoretical and visual research about the significance of text and art / design from the past (such as Barbara Kruger, Jenny Holzer, Lawrence Weiner, Edward Ruscha, fluxus...), the historical gains and losses of content and meaning within the techno- logical achievements and eventually implement the outcomes of the research in a practical way (analogue and digital) in my own work.
-As a conclusion, I hope I will find out clear or at least some practical solutions for the below questions:
-- How can the power of text be used in typography as a design tool ?
-- How do they interact ?
-- How can they direct and influence each other?
-- Where is the border between graphic design and fine arts, if language becomes an autonomous design tool?
-<a target="_blank" href="tryit.asp?filename=trycss_text">[LINK]</a>  </p>
-
-</div>
+<svg class="windowRect" width="1200" height="400">
+  <rect width="19" height="19" fill="red" x="511" y="332" z-index="2" />  
+</svg>
  -->
 
+<a onclick="setTimeout(myFunction, 2000);" href="Thoughts-Chapters.html"><div class="windowRect" ></div></a>
+
+
 </body>
+
+
 </html>

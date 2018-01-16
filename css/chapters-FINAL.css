@@ -1,0 +1,323 @@
+html, body {
+	height: auto;
+	
+}
+body {
+	display: flex;
+	position:fixed;
+	
+}
+
+
+/* ..............IMPORTANT.............. */
+
+#columns {
+	line-height:1vw;
+	letter-spacing: -10px;
+	flex: 1;
+	
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.3vw;
+	font-weight: 700;
+	background-size:auto;
+	padding-left: 15px;
+    padding-right: 15px;
+    height: 100vh;
+    background-color: #eeeadd;
+    transition: all .9s ease-in-out;
+    
+}
+
+
+#columns:hover {
+	transition: line-height 1s ease-in-in;
+	line-height:2.8vw; 
+	letter-spacing: 0;
+	
+	background-color: #f6f4ee;
+	color:black; 
+	font-size: 2.3vw;
+	font-weight: 300;
+	text-align: center center;
+	z-index: 1;
+	flex: 20;
+	transition: background-color 2s ease-in-out,  color 2s ease-in-out, font-weight 2s ease-in-in;
+	hyphens: none;
+	overflow: scroll;	
+	text-indent: inherit;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+
+/* ......................................... */
+
+
+img {
+    display: block;
+    width:100%;
+  }
+  
+ 
+
+.pics {
+    position: relative;
+    cursor: pointer;
+/*      width:100%; */
+	alignment-adjust: center;
+    
+  }
+  
+@media screen and (min-width: 480px) {
+.pics:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    background: black;
+    width:100%;
+    transition: all .3s linear;
+  }
+  
+.pics:hover:before {
+    background: none;    
+  }
+}
+
+/* ......................................... */
+
+@media print  {
+
+body {
+position: initial;
+	}
+
+@media print {
+  body {
+  position: initial;
+    filter: grayscale(100%);
+  }
+}	
+
+#columns:before {
+width: 0.5cm;
+	}
+	
+#columns:hover {
+overflow: visible;
+min-width: 20cm;
+margin: 1cm;
+page-break-before: avoid;
+	}
+}
+
+
+
+/* 
+@media print {
+.tooltip:before { 
+	visibility: visible;
+	content: "";
+	display: none;
+	position: initial; 
+	}
+ 
+.tooltip:hover:after { 
+  visibility: visible;
+  content: "";
+  display: block;
+  position: initial; 
+  color:red;
+	}
+}
+ */
+
+
+/* ......................................... */
+
+::selection {
+	background:#aa9655;
+	color:white;
+}
+
+
+/* ......................................... */
+
+span {
+/* 	color:red; */
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+}
+
+.indentQuoteText {
+margin-left: 90px;
+font-size: 1.7vw;
+line-height:2.3vw;
+}
+
+
+
+.indentBodyText {
+margin-left: 30px;
+/* font-size: 1.7vw; */
+}
+
+/* ......................................... */
+
+
+#columns .tooltip, #columns .tooltipQuote {
+	-webkit-animation-name: none;
+}
+
+#columns:hover .tooltip, #columns:hover .tooltipQuote {
+	animation: blinker 0.5s ease-in-out infinite;
+}
+
+#columns:hover .tooltip:hover, #columns:hover .tooltipQuote:hover {
+	-webkit-animation-name: none;
+}
+
+/* ........................ */
+
+.tooltip, .tooltipQuote {
+    position: relative;
+    display: inline-block;
+    color: #aa9655;
+    animation: blinker 0.5s ease-in-out infinite;
+}
+
+.tooltipQuote {
+    font-size: 1.7vw;
+	line-height:2.3vw;  
+	padding-left: 90px;
+    float:left;
+}
+
+/* ........................ */
+	
+.tooltiptext, .tooltiptextQuote {
+    visibility: hidden;
+    width: 120px;
+    background-color: #f6f4ee;
+    color: #99874d;
+    text-align: left;
+    padding: 20px 20px;
+    position: absolute;
+    z-index:100;
+}
+
+.tooltiptext {
+	top: 50%;
+    left: 50%;
+}
+
+.tooltiptextQuote {
+	top: 50%;
+    right: 50%;
+}
+
+/* ........................ */ 
+  
+.tooltip:hover .tooltiptext, .tooltipQuote:hover .tooltiptextQuote {
+	visibility: visible;
+	position: absolute;
+	font-size: 1.7vw;
+	line-height:2.3vw;
+	float:left;
+	clear:both;
+	width: 300px;
+	text-align: center center;
+}
+
+.tooltip:hover .tooltiptext {
+	top: 50px;
+    left: 0px;
+	margin-top: -50px;
+	margin-left: -150px;
+}
+
+.tooltipQuote:hover .tooltiptextQuote {
+	top: 50px;
+    right: 0px;
+	margin-top: -70px;
+	margin-right: -180px;
+}
+
+
+
+/* ..............IMPORTANT.............. */
+
+
+/* 
+.tooltip:hover  .tooltiptext {
+	color: transparent;
+	text-shadow: 0 0 5px black;
+}
+ */
+
+/* ..............IMPORTANT.............. */
+
+
+
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+
+/* ......................................... */
+
+
+.overlayFigures {
+	position:relative;
+	width:90%;
+	margin-left: 30px;
+}
+
+.under {
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0; 
+	transition: opacity .3s ease-in-out;
+}
+
+.over {
+	opacity:1; 
+	transition: opacity .3s ease-in-out;
+}
+
+.under:hover {
+	opacity:1;
+}
+
+.over:hover {
+	opacity:0;
+}
+
+.figuresText {
+	position: relative;
+/*     top: 50px; */
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.2vw;
+	line-height:1.6vw;
+	font-weight: 900;
+	letter-spacing: -1.7px;
+	margin-left: 30px;
+	margin-right: 30px;
+	transition: all .3s linear;
+}
+
+.overlayFigures:hover + .figuresText {
+	font-weight: 300;
+    letter-spacing: 0;
+}
+
+/* ......................................... */
