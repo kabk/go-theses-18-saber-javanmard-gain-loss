@@ -320,4 +320,26 @@ margin-left: 30px;
     letter-spacing: 0;
 }
 
+
+.referencesText {
+	font-size: 1.2vw;
+	line-height:0.5vw;
+	font-weight: 400;
+	transition: all .3s linear;
+}
+
+.referencesText:hover {
+	font-size: 1.2vw;
+	line-height:1.7vw;
+	font-weight: 300;
+}
+
+.refernces {
+	color:#887844;
+	line-height:1vw;
+	text-decoration:none;
+}
+
+
+
 /* ......................................... */
